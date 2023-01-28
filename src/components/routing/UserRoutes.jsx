@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 import { lazy } from "react"
 
+const SharedLayout = lazy(() => import("../layout/SharedLayout/SharedLayout"))
 const Home = lazy(() => import("../../pages/Home/Home"))
 const AddNewWords = lazy(() => import("../../pages/AddNewWords/AddNewWords"))
 const Testing = lazy(() => import("../../pages/Testing/Testing"))
@@ -14,7 +15,7 @@ export default function UserRoutes () {
             <Route path="/" element={<SharedLayout/>}>
                 <Route index element={<Home/>}/>
                 <Route path="/new-words" element={<AddNewWords/>}/>
-                <Route path="/test" element={<Testing/>}/>
+                <Route path="/testing" element={<Testing/>}/>
                 <Route path="/results" element={<Results/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Route>

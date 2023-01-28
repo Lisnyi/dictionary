@@ -1,8 +1,8 @@
-
+import { UserRoutes } from "./components";
 
 function App() {
   return (
-
+    <UserRoutes/>
   );
 }
 

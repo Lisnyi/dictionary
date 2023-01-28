@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom"
 import { Suspense } from "react"
-import { Header, Footer } from '../../../components'
-import { Loader } from "./Loader.styled"
+import { Header } from '../../../components'
 
 export default function SharedLayout() {
   return (
