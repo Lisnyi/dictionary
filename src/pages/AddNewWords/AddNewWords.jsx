@@ -17,7 +17,6 @@ export default function AddNewWords() {
 
     return (
       <div>
-        {console.log(dictionary)}
         <AddNewWordForm addNewWord={handleSubmit}/>
       </div>
     )
