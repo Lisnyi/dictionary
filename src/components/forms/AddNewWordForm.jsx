@@ -11,7 +11,6 @@ export default function AddNewWordForm({addNewWord}) {
     const translateId = useMemo(()=> nanoid(), []);
 
     const handleSubmit = ({word, translate}, {resetForm}) => {
-        console.log(word, translate)
         addNewWord({word, translate})
         resetForm()
     }

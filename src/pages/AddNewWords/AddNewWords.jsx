@@ -1,20 +1,23 @@
-import {AddNewWordForm} from "../../components"
 import { useSelector, useDispatch } from 'react-redux';
-import { getWords } from '../../store/words/words-selectors';
-import { addWord } from '../../store/words/words-slice';
+import { AddNewWordForm } from "../../components"
+import { getDictionary, addWord } from '../../store/dictionary'
+import { isDuplicate } from '../../utils';
+
 
 export default function AddNewWords() {
-  const words = useSelector(getWords)
+  const dictionary = useSelector(getDictionary)
   const dispatch = useDispatch()
 
   const handleSubmit = (newWord) => {
-
+    if (isDuplicate(newWord.word, dictionary)){
+      return console.log(`dublicate ${newWord.word}`)
+    }
     dispatch(addWord(newWord))
   }
 
     return (
       <div>
-        {console.log(words)}
+        {console.log(dictionary)}
         <AddNewWordForm addNewWord={handleSubmit}/>
       </div>
     )

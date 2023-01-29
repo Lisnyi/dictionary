@@ -8,19 +8,19 @@ import { persistStore,
     PURGE,
     REGISTER, } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import { wordsReducer } from "./words/words-slice"
+import { dictionaryReducer } from './dictionary'
 
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['words']
+    whitelist: ['dictionary']
   }
 
-const persistedWordsReducer = persistReducer(persistConfig, wordsReducer)
+const persistedDictionaryReducer = persistReducer(persistConfig, dictionaryReducer)
 
 export const store = configureStore({
     reducer: {
-        words: persistedWordsReducer,
+        dictionary: persistedDictionaryReducer,
     },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

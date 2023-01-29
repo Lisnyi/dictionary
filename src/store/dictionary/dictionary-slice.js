@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { nanoid } from "nanoid";
 
-const wordsInitialState = {
-    words: []
+const dictionaryInitialState = {
+    dictionary: []
 }
 
-const wordsSlice = createSlice({
-    name: "words",
-    initialState: wordsInitialState,
+const dictionarySlice = createSlice({
+    name: "dictionary",
+    initialState: dictionaryInitialState,
     reducers: {
         addWord: {
-            reducer({words}, {payload}){
-                words.push(payload)
+            reducer({dictionary}, {payload}){
+                dictionary.push(payload)
             },
             prepare(data){
                 return {
@@ -25,6 +25,6 @@ const wordsSlice = createSlice({
     }}
 )
 
-export const { addWord } = wordsSlice.actions
+export const { addWord } = dictionarySlice.actions
 
-export const wordsReducer = wordsSlice.reducer
+export const dictionaryReducer = dictionarySlice.reducer

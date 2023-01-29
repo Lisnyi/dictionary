@@ -1,0 +1,1 @@
+export const getDictionary = store => store.dictionary.dictionary
