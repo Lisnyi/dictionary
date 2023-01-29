@@ -1,14 +1,31 @@
-import { getRandomInt } from "../../../utils"
+import { useMemo } from 'react'
+import { createVariants } from "../../../utils"
 
-export default function OneTest({item, wrongAnswers}) {
+export default function OneTest({item, dictionary, currentTest, nextTest, addCorrectAnswer, addWrongAnswer}) {
     const {word} = item
-    const index = getRandomInt(3)
-    wrongAnswers.splice(index, 0, item)
+
+    const variants = useMemo(() => createVariants(dictionary, item), [dictionary])
+
+    function checkAnswer(answer) {
+        if (answer === item.translate){
+            addCorrectAnswer()
+            nextTest()
+            return
+        }
+        addWrongAnswer()
+        nextTest()
+        return
+    } 
 
     return (
-        <div>
-            <p>Обери правильний переклад слова <span>{word}</span></p>
-            {wrongAnswers.map(({id, translate:wrongAnswer}) => <button key={id}>{wrongAnswer}</button>)}
-        </div>
+        currentTest &&  <div>
+                            <p>{word}</p>
+                            {variants.map(({id, translate:answer}) =>
+                                <button
+                                    key={id}
+                                    onClick={() => checkAnswer(answer)}>
+                                        {answer}
+                                </button>)}
+                        </div>
     )
 }
