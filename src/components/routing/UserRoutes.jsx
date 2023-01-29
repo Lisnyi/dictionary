@@ -4,8 +4,7 @@ import { lazy } from "react"
 const SharedLayout = lazy(() => import("../layout/SharedLayout/SharedLayout"))
 const Home = lazy(() => import("../../pages/Home/Home"))
 const AddNewWords = lazy(() => import("../../pages/AddNewWords/AddNewWords"))
-const Testing = lazy(() => import("../../pages/Testing/Testing"))
-const Results = lazy(() => import("../../pages/Results/Results"))
+const TestingPage = lazy(() => import("../../pages/TestingPage/TestingPage"))
 const NotFound = lazy(() => import("../../pages/NotFound/NotFound"))
 
 
@@ -15,8 +14,7 @@ export default function UserRoutes () {
             <Route path="/" element={<SharedLayout/>}>
                 <Route index element={<Home/>}/>
                 <Route path="/new-words" element={<AddNewWords/>}/>
-                <Route path="/testing" element={<Testing/>}/>
-                <Route path="/results" element={<Results/>}/>
+                <Route path="/testing" element={<TestingPage/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Route>
         </Routes>
