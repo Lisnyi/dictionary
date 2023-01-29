@@ -4,7 +4,7 @@ import { createVariants } from "../../../utils"
 export default function OneTest({item, dictionary, currentTest, nextTest, addCorrectAnswer, addWrongAnswer}) {
     const {word} = item
 
-    const variants = useMemo(() => createVariants(dictionary, item), [dictionary])
+    const variants = useMemo(() => createVariants(dictionary, item), [dictionary, item])
 
     function checkAnswer(answer) {
         if (answer === item.translate){

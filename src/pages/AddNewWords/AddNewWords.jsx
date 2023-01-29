@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { AddNewWordForm } from "../../components"
 import { getDictionary, addWord } from '../../store/dictionary'
 import { isDuplicate } from '../../utils';
+import { Section, Container } from '../../styles';
 
 
 export default function AddNewWords() {
@@ -16,8 +17,10 @@ export default function AddNewWords() {
   }
 
     return (
-      <div>
-        <AddNewWordForm addNewWord={handleSubmit}/>
-      </div>
+      <Container>
+        <Section>
+          <AddNewWordForm addNewWord={handleSubmit}/>
+        </Section>
+      </Container>
     )
 }

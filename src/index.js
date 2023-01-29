@@ -5,18 +5,21 @@ import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react'
 import { Provider } from "react-redux";
 import { store, persistor } from './store/store';
+import { ChakraProvider, Spinner } from '@chakra-ui/react'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
+  <React.StrictMode>
     <BrowserRouter basename="/dictionary">
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <Suspense fallback='...loading'>
-            <App />
-          </Suspense>
+          <ChakraProvider>
+            <Suspense fallback={<Spinner m='25% 50%'/>}>
+              <App />
+            </Suspense>
+          </ChakraProvider>
         </PersistGate>
       </Provider>
     </BrowserRouter>
-  // </React.StrictMode>
+  </React.StrictMode>
 );

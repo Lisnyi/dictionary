@@ -4,6 +4,7 @@ import { nanoid } from "nanoid";
 import { Input } from "../index"
 import initialValues from "./initialValues"
 import validationSchema from "./validationSchema"
+import { Button } from "../../styles";
 
 export default function AddNewWordForm({addNewWord}) {
 
@@ -33,7 +34,7 @@ export default function AddNewWordForm({addNewWord}) {
                             name="translate"
                             label="Переклад"
                         />
-                    <button type="submit">Додати</button>
+                    <Button type="submit">Додати</Button>
                 </Form>
                 )}
         </Formik>

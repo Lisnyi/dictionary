@@ -1,17 +1,24 @@
 import TableRow from "./TableRow/TableRow"
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th
+} from '@chakra-ui/react'
 
 export default function dictionaryTable({dictionary}) {
   return (
-    <table>
-        <thead>
-            <tr>
-                <th>Слово</th>
-                <th>Переклад</th>
-            </tr>
-        </thead>
-        <tbody>
+    <Table size='lg' variant='striped'>
+        <Thead>
+            <Tr>
+                <Th textAlign='center' fontSize="xl">Слово</Th>
+                <Th textAlign='center' fontSize="xl">Переклад</Th>
+            </Tr>
+        </Thead>
+        <Tbody>
             {dictionary.map(word => <TableRow key={word.id} element={word} />)}
-        </tbody>
-    </table>
+        </Tbody>
+    </Table>
   )
 }
