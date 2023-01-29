@@ -1,0 +1,1 @@
+export const getWords = store => store.words.words

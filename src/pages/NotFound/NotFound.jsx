@@ -1,11 +1,9 @@
-import { FirstSection, Container } from '../../styles'
-
 export default function NotFound() {
-    return (
-      <Container>
-        <FirstSection>
-          Page not found
-        </FirstSection>
-      </Container>
-    )
-  }
+  return (
+    <div>
+      <div>
+        <h1>Page not found</h1>
+      </div>
+    </div>
+  )
+}

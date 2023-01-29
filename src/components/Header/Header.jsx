@@ -6,9 +6,9 @@ export default function Header() {
     <header>
         <div>
           <nav>
-              <NavLink to="/" end>Dictionary</NavLink>
-              <NavLink to="/new-words">Add new words</NavLink>
-              <NavLink to="/testing">Testing</NavLink>
+              <NavLink to="/" end>Головна</NavLink>
+              <NavLink to="/new-words">Додати нове слово</NavLink>
+              <NavLink to="/testing">Тестування</NavLink>
           </nav>
         </div>
     </header>

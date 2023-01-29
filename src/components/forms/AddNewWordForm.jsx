@@ -12,7 +12,7 @@ export default function AddNewWordForm({addNewWord}) {
 
     const handleSubmit = ({word, translate}, {resetForm}) => {
         console.log(word, translate)
-        // addNewWord({word, translate})
+        addNewWord({word, translate})
         resetForm()
     }
 
@@ -27,14 +27,14 @@ export default function AddNewWordForm({addNewWord}) {
                         <Input
                             id={wordId}
                             name="word"
-                            label="New word"
+                            label="Нове слово"
                         />
                         <Input
                             id={translateId}
                             name="translate"
-                            label="Translate"
+                            label="Переклад"
                         />
-                    <button type="submit">Add to dictionary</button>
+                    <button type="submit">Додати</button>
                 </Form>
                 )}
         </Formik>
