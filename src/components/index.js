@@ -5,3 +5,4 @@ export { default as Input } from './generic/Input/Input'
 export { default as AddNewWordForm } from './forms/AddNewWordForm'
 export { default as DictionaryTable } from './DictionaryTable/DictionaryTable'
 export {default as Testing} from './Testing/Testing'
+
