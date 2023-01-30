@@ -1,5 +1,7 @@
 import { getRandomInt } from './index'
 
+// Повертає випадкову кількість елементів масиву в залежності від значення контролера
+
 export function getRandomArrayElements(array, el, control=10) {
     let result = []
 
