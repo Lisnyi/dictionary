@@ -2,20 +2,20 @@ import { Routes, Route } from 'react-router-dom'
 import { lazy } from 'react'
 
 const SharedLayout = lazy(() => import("../layout/SharedLayout/SharedLayout"))
-const Home = lazy(() => import("../../pages/Home/Home"))
-const AddNewWords = lazy(() => import("../../pages/AddNewWords/AddNewWords"))
-const TestingPage = lazy(() => import("../../pages/TestingPage/TestingPage"))
-const NotFound = lazy(() => import("../../pages/NotFound/NotFound"))
+const HomePage = lazy(() => import("../../pages/HomePage"))
+const AddNewWordsPage = lazy(() => import("../../pages/AddNewWordsPage"))
+const TestingPage = lazy(() => import("../../pages/TestingPage"))
+const NotFoundPage = lazy(() => import("../../pages/NotFoundPage"))
 
 
 export function UserRoutes () {
     return (
         <Routes>
             <Route path="/" element={<SharedLayout/>}>
-                <Route index element={<Home/>}/>
-                <Route path="/new-words" element={<AddNewWords/>}/>
+                <Route index element={<HomePage/>}/>
+                <Route path="/new-words" element={<AddNewWordsPage/>}/>
                 <Route path="/testing" element={<TestingPage/>}/>
-                <Route path="*" element={<NotFound/>}/>
+                <Route path="*" element={<NotFoundPage/>}/>
             </Route>
         </Routes>
     )

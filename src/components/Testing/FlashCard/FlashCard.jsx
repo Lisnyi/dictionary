@@ -1,26 +1,21 @@
 import { useMemo } from 'react'
 import { createVariants } from '../../../utils'
-import { CustomButton } from '../../../components'
+import { CustomButton } from '../..'
 import { Text, Box, Grid } from '@chakra-ui/react'
 
-export function OneTest({item, dictionary, currentTest, nextTest, addCorrectAnswer, addWrongAnswer}) {
+export function FlashCard({item, dictionary, currentCard, nextCard, addCorrectAnswer, addWrongAnswer}) {
     const {word} = item
 
     const variants = useMemo(() => createVariants(dictionary, item), [dictionary, item])
 
     function checkAnswer(answer) {
-        if (answer === item.translate){
-            addCorrectAnswer()
-            nextTest()
-            return
-        }
-        addWrongAnswer()
-        nextTest()
+        answer === item.translate ? addCorrectAnswer() : addWrongAnswer()
+        nextCard()
         return
     } 
 
     return (
-        currentTest &&  <Box>
+        currentCard &&  <Box>
                             <Text
                                 fontSize='3xl' 
                                 mb={4}

@@ -1,8 +1,8 @@
-export * from './Header/Header'
+export * from './Header'
 export * from './layout'
-export * from './UserRoutes/UserRoutes'
-export * from './generic'
+export * from './UserRoutes'
+export * from './common'
 export * from './forms'
-export * from './DictionaryTable/DictionaryTable'
+export * from './DictionaryTable'
 export * from './Testing'
 

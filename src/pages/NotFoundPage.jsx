@@ -1,4 +1,4 @@
-import { Section, Container, MainTitle } from '../../components'
+import { Section, Container, MainTitle } from '../components'
 
 export default function NotFound() {
   return (

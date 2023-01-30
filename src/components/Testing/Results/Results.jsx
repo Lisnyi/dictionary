@@ -1,5 +1,5 @@
 import { getSuccessRate } from '../../../utils'
-import { MainTitle } from '../../generic'
+import { MainTitle } from '../../common'
 import { Text } from '@chakra-ui/react'
 
 export function Results({correctAnswers, wrongAnswers}) {

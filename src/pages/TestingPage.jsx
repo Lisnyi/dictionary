@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { getDictionary } from '../../store'
-import { Testing, CustomButton, Section, Container } from '../../components'
+import { getDictionary } from '../store'
+import { Testing, CustomButton, Section, Container } from '../components'
 import { useState } from 'react'
 import { Text } from '@chakra-ui/react'
 

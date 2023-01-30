@@ -1,4 +1,4 @@
-import { TableRow } from './TableRow/TableRow'
+import { TableRow } from './TableRow'
 import {
   Table,
   Thead,
@@ -17,7 +17,7 @@ export function DictionaryTable({dictionary}) {
                 </Tr>
             </Thead>
             <Tbody>
-                {dictionary.map(word => <TableRow key={word.id} element={word} />)}
+                {dictionary.map(({id, word, translate}) => <TableRow key={id} word={word} translate={translate} />)}
             </Tbody>
         </Table>
     )

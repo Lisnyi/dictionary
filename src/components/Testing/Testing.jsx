@@ -1,15 +1,15 @@
 import { useState, useMemo } from 'react'
 import { getRandomArrayElements } from '../../utils'
-import { OneTest, Results } from './index' 
+import { FlashCard, Results } from './index' 
 
 export function Testing({wordsList}) {
     const testWords = useMemo(() => getRandomArrayElements(wordsList), [wordsList])
-    const [currentTest, setCurrentTest] = useState(0)
+    const [currentCard, setCurrentCard] = useState(0)
     const [correctAnswers, setCorrectAnswers] = useState(0)
     const [wrongAnswers, setWrongAnswers] = useState(0)
 
-    function nextTest(){
-        setCurrentTest(currentTest + 1)
+    function nextCard(){
+        setCurrentCard(currentCard + 1)
     }
 
     function addCorrectAnswer() {
@@ -20,13 +20,19 @@ export function Testing({wordsList}) {
         setWrongAnswers(wrongAnswers + 1)
     }
 
+    function isEndTestind(current) {
+        return current === 10
+    }
+
+    const endTest = useMemo(() => isEndTestind(currentCard), [currentCard])
+
     return (
-        (currentTest < 10)
-            ?   testWords.map((test, index) => <OneTest
+        (!endTest)
+            ?   testWords.map((test, index) => <FlashCard
                     key={test.id}
                     item={test}
-                    currentTest={currentTest === index}
-                    nextTest={nextTest}
+                    currentCard={currentCard === index}
+                    nextCard={nextCard}
                     addCorrectAnswer={addCorrectAnswer}
                     addWrongAnswer={addWrongAnswer}
                     dictionary={wordsList}/>)

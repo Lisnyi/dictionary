@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { AddNewWordForm, Section, Container } from '../../components'
-import { getDictionary, addWord } from '../../store'
-import { isDuplicate } from '../../utils'
+import { AddNewWordForm, Section, Container } from '../components'
+import { getDictionary, addWord } from '../store'
+import { isDuplicate } from '../utils'
 import { useToast } from '@chakra-ui/react'
 
 export default function AddNewWords() {

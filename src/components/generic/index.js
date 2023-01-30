@@ -1,5 +1,0 @@
-export * from './Box'
-export * from './Button/CustomButton'
-export * from './Input/CustomInput'
-export * from './Title/MainTitle'
-export * from './Link/CustomLink'

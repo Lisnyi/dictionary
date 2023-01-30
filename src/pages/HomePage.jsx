@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { DictionaryTable, Container, Section, MainTitle, CustomButton } from '../../components'
-import { getDictionary } from '../../store'
+import { DictionaryTable, Container, Section, MainTitle, CustomButton } from '../components'
+import { getDictionary } from '../store'
 import { Box, Text } from '@chakra-ui/react'
 
 export default function Home() {
