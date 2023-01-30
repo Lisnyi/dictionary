@@ -1,12 +1,10 @@
-import { Form, Formik } from "formik";
-import { useMemo } from "react";
-import { nanoid } from "nanoid";
-import { Input } from "../index"
-import initialValues from "./initialValues"
-import validationSchema from "./validationSchema"
-import { Button } from "../../styles";
+import { Form, Formik } from 'formik';
+import { useMemo } from 'react';
+import { nanoid } from 'nanoid';
+import { CustomInput, CustomButton } from '../../index'
+import { initialValues, schema } from './index'
 
-export default function AddNewWordForm({addNewWord}) {
+export function AddNewWordForm({addNewWord}) {
 
     const wordId = useMemo(()=> nanoid(), []);
     const translateId = useMemo(()=> nanoid(), []);
@@ -19,22 +17,22 @@ export default function AddNewWordForm({addNewWord}) {
     return (
         <Formik
             initialValues={initialValues}
-            validationSchema={validationSchema}
+            validationSchema={schema}
             onSubmit={handleSubmit}
             validateOnBlur={false}>
                 {() => (
                     <Form autoComplete='off'>
-                        <Input
+                        <CustomInput
                             id={wordId}
                             name="word"
                             label="Нове слово"
                         />
-                        <Input
+                        <CustomInput
                             id={translateId}
                             name="translate"
                             label="Переклад"
                         />
-                    <Button type="submit">Додати</Button>
+                    <CustomButton type="submit">Додати</CustomButton>
                 </Form>
                 )}
         </Formik>

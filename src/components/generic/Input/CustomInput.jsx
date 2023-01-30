@@ -6,7 +6,7 @@ import {
     FormErrorMessage,
   } from '@chakra-ui/react'
 
-export default function CustomInput({id, label, name, ...rest}) {
+export function CustomInput({id, label, name, ...rest}) {
     return (
         <Field>
             {({ form }) => (
@@ -18,7 +18,8 @@ export default function CustomInput({id, label, name, ...rest}) {
                         name={name}
                         width={80}
                         mb={(form.errors[name] && form.touched[name]) ? 0 : 3}
-                        {...rest}/>
+                        {...rest}
+                    />
                     <FormErrorMessage
                         fontSize="12px">
                         {form.errors[name]}

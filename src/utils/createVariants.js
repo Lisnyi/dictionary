@@ -1,4 +1,4 @@
-import { getRandomArrayElements, getRandomInt } from "./index"
+import { getRandomArrayElements, getRandomInt } from './index'
 
 export function createVariants(list, correct) {
     const answers = getRandomArrayElements(list, correct, 3)

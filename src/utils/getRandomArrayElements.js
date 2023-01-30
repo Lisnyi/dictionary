@@ -1,4 +1,4 @@
-import { getRandomInt } from "./getRandomInt"
+import { getRandomInt } from './index'
 
 export function getRandomArrayElements(array, el, control=10) {
     let result = []

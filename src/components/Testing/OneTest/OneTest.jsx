@@ -1,7 +1,9 @@
 import { useMemo } from 'react'
-import { createVariants } from "../../../utils"
+import { createVariants } from '../../../utils'
+import { CustomButton } from '../../../components'
+import { Text, Box, Grid } from '@chakra-ui/react'
 
-export default function OneTest({item, dictionary, currentTest, nextTest, addCorrectAnswer, addWrongAnswer}) {
+export function OneTest({item, dictionary, currentTest, nextTest, addCorrectAnswer, addWrongAnswer}) {
     const {word} = item
 
     const variants = useMemo(() => createVariants(dictionary, item), [dictionary, item])
@@ -18,14 +20,30 @@ export default function OneTest({item, dictionary, currentTest, nextTest, addCor
     } 
 
     return (
-        currentTest &&  <div>
-                            <p>{word}</p>
-                            {variants.map(({id, translate:answer}) =>
-                                <button
-                                    key={id}
-                                    onClick={() => checkAnswer(answer)}>
-                                        {answer}
-                                </button>)}
-                        </div>
+        currentTest &&  <Box>
+                            <Text
+                                fontSize='3xl' 
+                                mb={4}
+                                textTransform='capitalize'
+                                fontWeight='bold'>
+                                    {word}
+                            </Text>
+                            <Grid
+                                width='504px'
+                                templateColumns='1fr 1fr'
+                                gap={6}
+                                m='0 auto'
+                                >
+                                    {variants.map(({id, translate:answer}) =>
+                                        <CustomButton
+                                            key={id}
+                                            onClick={() => checkAnswer(answer)}
+                                            textTransform='capitalize'
+                                            size='lg'
+                                            width='240px'>
+                                                {answer}
+                                        </CustomButton>)}
+                            </Grid>
+                        </Box>
     )
 }

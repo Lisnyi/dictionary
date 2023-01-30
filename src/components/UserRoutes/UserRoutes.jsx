@@ -1,5 +1,5 @@
-import { Routes, Route } from "react-router-dom"
-import { lazy } from "react"
+import { Routes, Route } from 'react-router-dom'
+import { lazy } from 'react'
 
 const SharedLayout = lazy(() => import("../layout/SharedLayout/SharedLayout"))
 const Home = lazy(() => import("../../pages/Home/Home"))
@@ -8,7 +8,7 @@ const TestingPage = lazy(() => import("../../pages/TestingPage/TestingPage"))
 const NotFound = lazy(() => import("../../pages/NotFound/NotFound"))
 
 
-export default function UserRoutes () {
+export function UserRoutes () {
     return (
         <Routes>
             <Route path="/" element={<SharedLayout/>}>

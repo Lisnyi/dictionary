@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { getRandomArrayElements } from '../../utils'
 import { OneTest, Results } from './index' 
 
-export default function Testing({wordsList}) {
+export function Testing({wordsList}) {
     const testWords = useMemo(() => getRandomArrayElements(wordsList), [wordsList])
     const [currentTest, setCurrentTest] = useState(0)
     const [correctAnswers, setCorrectAnswers] = useState(0)

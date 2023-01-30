@@ -1,9 +1,11 @@
+import { Section, Container, MainTitle } from '../../components'
+
 export default function NotFound() {
   return (
-    <div>
-      <div>
-        <h1>Page not found</h1>
-      </div>
-    </div>
+    <Container>
+      <Section>
+        <MainTitle>Page not found</MainTitle>
+      </Section>
+    </Container>
   )
 }

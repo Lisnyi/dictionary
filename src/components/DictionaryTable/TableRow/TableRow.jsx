@@ -3,7 +3,7 @@ import {
     Td
   } from '@chakra-ui/react'
 
-export default function TableRow({element}) {
+export function TableRow({element}) {
     const {word, translate} = element
     
     return (

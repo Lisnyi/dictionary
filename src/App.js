@@ -1,9 +1,7 @@
-import { UserRoutes } from "./components";
+import { UserRoutes } from './components'
 
-function App() {
-  return (
-    <UserRoutes/>
-  );
+export function App() {
+    return (
+        <UserRoutes/>
+    );
 }
-
-export default App;

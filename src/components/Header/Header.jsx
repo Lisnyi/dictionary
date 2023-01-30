@@ -1,17 +1,31 @@
-import { NavLink } from "react-router-dom"
-import {Section, Container} from '../../styles'
+import { Section, Container, CustomLink } from '../index'
+import { Box } from '@chakra-ui/react'
 
-export default function Header() {
-
-  return (
-    <Section as='header'>
-        <Container>
-          <nav>
-              <NavLink to="/" end>Головна</NavLink>
-              <NavLink to="/new-words">Додати нове слово</NavLink>
-              <NavLink to="/testing">Тестування</NavLink>
-          </nav>
-        </Container>
-    </Section>
-  )
+export function Header() {
+    return (
+        <Section as='header'>
+            <Container>
+            <Box
+                as='nav'
+                display='flex'
+                justifyContent='center'
+                >
+                    <CustomLink 
+                        to="/"
+                        end>
+                            Головна
+                    </CustomLink>
+                    <CustomLink  
+                        to="/new-words">
+                            Додати нове слово
+                    </CustomLink>
+                    <CustomLink 
+                        to="/testing"
+                        mr='0'>
+                            Тестування
+                    </CustomLink>
+            </Box>
+            </Container>
+        </Section>
+    )
 }
